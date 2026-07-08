@@ -27,7 +27,7 @@ export const articles: Article[] = [
     readTime: '6 min',
     author: 'Marie-Ève Tremblay',
     authorRole: 'Rédactrice',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/guide-echange-cadeaux-bureau',
     imageAlt: 'Cadeaux emballés sur un bureau',
     featured: true,
     published: true,
@@ -47,7 +47,7 @@ export const articles: Article[] = [
     dateISO: '2024-11-03',
     readTime: '5 min',
     author: 'Sophie Lavoie',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/acheter-local-cadeau-quebecois',
     imageAlt: 'Atelier d’artisan québécois',
     featured: true,
     published: true,
@@ -66,7 +66,7 @@ export const articles: Article[] = [
     dateISO: '2024-10-28',
     readTime: '4 min',
     author: 'Marie-Ève Tremblay',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/cadeau-derniere-minute',
     imageAlt: 'Horloge et paquet cadeau',
     published: true,
     body: [
@@ -84,7 +84,7 @@ export const articles: Article[] = [
     dateISO: '2024-10-15',
     readTime: '8 min',
     author: 'Jean-François Bouchard',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/50-idees-celui-qui-a-tout',
     imageAlt: 'Sélection d’objets uniques',
     published: true,
     body: [
@@ -101,7 +101,7 @@ export const articles: Article[] = [
     dateISO: '2024-10-08',
     readTime: '4 min',
     author: 'Sophie Lavoie',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/emballage-cadeau-original',
     imageAlt: 'Emballage cadeau créatif',
     published: true,
     body: [
@@ -118,7 +118,7 @@ export const articles: Article[] = [
     dateISO: '2024-10-01',
     readTime: '5 min',
     author: 'Marie-Ève Tremblay',
-    image: '/images/blog/placeholder-article',
+    image: '/images/blog/budget-selon-occasion',
     imageAlt: 'Portefeuille et petit cadeau',
     published: true,
     body: [

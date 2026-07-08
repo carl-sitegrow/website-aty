@@ -1,0 +1,932 @@
+{
+  "generatedAt": "2026-07-08T19:18:58.929Z",
+  "outputs": [
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/f8ca14fd-4d22-46a5-a33c-672e3ec1e277.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1696139,
+      "type": "product",
+      "slug": "produit-figma-01",
+      "publicPath": "/images/products/produit-figma-01"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/1c4b87b8-d451-45e6-8d3e-921fc7899592.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2434620,
+      "type": "product",
+      "slug": "produit-figma-02",
+      "publicPath": "/images/products/produit-figma-02"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/e5662621-d4aa-4123-9fc5-e913f6f7763e.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1634702,
+      "type": "product",
+      "slug": "produit-figma-03",
+      "publicPath": "/images/products/produit-figma-03"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/082544cd-1b72-45aa-950a-37c57d7572a2.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2431455,
+      "type": "product",
+      "slug": "produit-figma-04",
+      "publicPath": "/images/products/produit-figma-04"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/70a05390-a1ca-4b04-a1e7-b19a40a61648.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2468942,
+      "type": "product",
+      "slug": "produit-figma-05",
+      "publicPath": "/images/products/produit-figma-05"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/d6e7a8a7-5478-476a-9173-b842fb45457b.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2516101,
+      "type": "product",
+      "slug": "produit-figma-06",
+      "publicPath": "/images/products/produit-figma-06"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/06d72cc8-526b-48dc-8dde-007c15ce7fa4.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2384619,
+      "type": "product",
+      "slug": "produit-figma-07",
+      "publicPath": "/images/products/produit-figma-07"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ee37db22-723d-4fb1-9b1f-b32660a059c7.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2775789,
+      "type": "product",
+      "slug": "produit-figma-08",
+      "publicPath": "/images/products/produit-figma-08"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/bdca3723-2899-4db5-979e-b1fc666bac44.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2378625,
+      "type": "product",
+      "slug": "produit-figma-09",
+      "publicPath": "/images/products/produit-figma-09"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/18fc896a-a673-4864-9b11-f121e4d1b779.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2612602,
+      "type": "product",
+      "slug": "produit-figma-10",
+      "publicPath": "/images/products/produit-figma-10"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/3a893ae8-dab1-4a00-a281-6fc4b3c41f07.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2258501,
+      "type": "product",
+      "slug": "produit-figma-11",
+      "publicPath": "/images/products/produit-figma-11"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/fc02acc8-81c2-4000-b539-d9119b407cf3.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2395212,
+      "type": "product",
+      "slug": "produit-figma-12",
+      "publicPath": "/images/products/produit-figma-12"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/247c5211-5bfe-44e5-a8e2-7aca70ca2b1e.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2568974,
+      "type": "product",
+      "slug": "produit-figma-13",
+      "publicPath": "/images/products/produit-figma-13"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/3b79ce0c-cb31-43a6-91d7-5a4da237fd82.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 2430234,
+      "type": "product",
+      "slug": "produit-figma-14",
+      "publicPath": "/images/products/produit-figma-14"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/0d615d37-79ce-4d5d-9ec6-9c4f0dcd7011.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1825752,
+      "type": "product",
+      "slug": "produit-figma-15",
+      "publicPath": "/images/products/produit-figma-15"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/00e5ba52-d8ca-4804-abce-095b638b9a7e.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1874745,
+      "type": "product",
+      "slug": "produit-figma-16",
+      "publicPath": "/images/products/produit-figma-16"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/0e4c1e80-0f56-45a0-8dc7-8feb361dc6b1.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 1883586,
+      "type": "product",
+      "slug": "produit-figma-17",
+      "publicPath": "/images/products/produit-figma-17"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/e9840afe-4dcf-4064-9477-22fe62ac68fc.png",
+      "width": 1248,
+      "height": 832,
+      "bytes": 2277360,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/f342cc9d-8887-4add-ae10-8dc141d52426.png",
+      "width": 1248,
+      "height": 832,
+      "bytes": 2795888,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/5cf6422d-2416-4c55-88f3-14f04da553e5.png",
+      "width": 1248,
+      "height": 832,
+      "bytes": 2126212,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/f850ab9a-02b7-41a1-a2a7-4459a9317604.png",
+      "width": 1248,
+      "height": 832,
+      "bytes": 2121047,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/d2d735b7-0d64-4191-a957-380212d103fe.png",
+      "width": 1248,
+      "height": 832,
+      "bytes": 1857537,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/80272d90-4dfb-402b-93c8-174b55087612.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2711530,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/cc06e42f-06a6-4d16-9120-a0c07ee1e197.png",
+      "width": 1536,
+      "height": 672,
+      "bytes": 2342374,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b625db8b-cbfb-46c2-8a7d-c77fdb52e15a.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2499743,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ff084a67-dd6a-4bcb-9757-999344f32057.png",
+      "width": 768,
+      "height": 1344,
+      "bytes": 2622906,
+      "type": "misc",
+      "slug": "figma-01",
+      "publicPath": "/images/figma/figma-01"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/a20f83bc-771b-4afa-afad-0c8a8e490feb.png",
+      "width": 768,
+      "height": 1344,
+      "bytes": 1819508,
+      "type": "misc",
+      "slug": "figma-02",
+      "publicPath": "/images/figma/figma-02"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/f9f43ddb-418e-4d7f-af36-ff014564a9d7.png",
+      "width": 768,
+      "height": 1344,
+      "bytes": 1989756,
+      "type": "misc",
+      "slug": "figma-03",
+      "publicPath": "/images/figma/figma-03"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/08638675-34e1-42f6-af53-34e0f4d52804.png",
+      "width": 768,
+      "height": 1344,
+      "bytes": 1080315,
+      "type": "misc",
+      "slug": "figma-04",
+      "publicPath": "/images/figma/figma-04"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/857a960a-ceb0-4ca9-ba77-9baee446b6ec.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2669227,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b6a6f735-fc77-4bd3-9763-caa12c9d4d5c.png",
+      "width": 768,
+      "height": 1344,
+      "bytes": 2427171,
+      "type": "misc",
+      "slug": "figma-05",
+      "publicPath": "/images/figma/figma-05"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/81c64bd0-bbd6-4f7d-977f-f59ca0b94ec2.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2655115,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/c7d703f0-478a-42ec-b2ec-847232482bfd.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1785920,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/e56da6a9-5801-46fe-9988-4e2835082442.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1963156,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/517dd2a7-daff-4e1d-80ea-b36b49ad7a59.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2481338,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b8cf604f-7336-4824-917a-55204d503498.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2031683,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/51ef7638-7bae-4b76-8494-061eb7a4e794.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 2151721,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/dcced8f4-b191-44de-b7a8-ceb2a0841133.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1281191,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/cfc691b1-1538-4554-9a29-180e6960ccb6.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 825225,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/76c5fd24-edc0-4144-9962-05f9f343c660.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1085581,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/7967c7e7-8612-455a-85af-c6747e518bbc.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 841244,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/19a8756f-45be-4c48-9f8a-b5c0fa7745db.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 851126,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/082dade4-93b5-4f28-8983-57e03b72a594.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1009782,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/69864fc1-6508-48ce-9b90-7b9d8d06bd5e.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1389244,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ff56b9c3-eee9-4d19-ab5f-220db2c35230.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1058834,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/65165ffc-72ee-4d72-ba65-058ac655007e.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1372283,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/22f6df75-9aa0-4efa-b287-77e11bc39452.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1319818,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/665e3360-089d-4bd7-9afe-1ed1252c6866.png",
+      "width": 1536,
+      "height": 672,
+      "bytes": 1637009,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/48eac3d1-43d3-4ffa-b99c-138785c1d79c.png",
+      "width": 1344,
+      "height": 768,
+      "bytes": 1165834,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/3ac36e38-5427-4df0-a328-54badfee6842.png",
+      "width": 1184,
+      "height": 864,
+      "bytes": 2365210,
+      "type": "hero",
+      "slug": "hero-accueil-cadeaux-quebec",
+      "publicPath": "/images/home/hero-accueil-cadeaux-quebec"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/3e3a4cfd-6beb-4f8b-b507-a852d7df5ca1.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 628646,
+      "type": "product",
+      "slug": "produit-figma-18",
+      "publicPath": "/images/products/produit-figma-18"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/0fc88e85-16c2-44dd-a1da-86f70798316e.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 656895,
+      "type": "product",
+      "slug": "produit-figma-19",
+      "publicPath": "/images/products/produit-figma-19"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/a3282932-5e09-47ae-a7c0-591b38c1b209.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 436771,
+      "type": "product",
+      "slug": "produit-figma-20",
+      "publicPath": "/images/products/produit-figma-20"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/d2650659-d860-476c-8ba7-ee90d4b5c1e1.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 425602,
+      "type": "product",
+      "slug": "produit-figma-21",
+      "publicPath": "/images/products/produit-figma-21"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/21e6c4b6-9d85-43d5-8e54-fe09aff8692f.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 672608,
+      "type": "product",
+      "slug": "produit-figma-22",
+      "publicPath": "/images/products/produit-figma-22"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b24aab3f-e92b-4685-93cb-7b31742e578c.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 754591,
+      "type": "product",
+      "slug": "produit-figma-23",
+      "publicPath": "/images/products/produit-figma-23"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/049dd371-f979-4722-9320-eae0068e1aca.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 692455,
+      "type": "product",
+      "slug": "produit-figma-24",
+      "publicPath": "/images/products/produit-figma-24"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/76ce68ba-a115-4999-8eef-a6ab18ff3885.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 641430,
+      "type": "product",
+      "slug": "produit-figma-25",
+      "publicPath": "/images/products/produit-figma-25"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/91e44d30-9086-45f7-b599-e35774dfc0df.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 647243,
+      "type": "product",
+      "slug": "produit-figma-26",
+      "publicPath": "/images/products/produit-figma-26"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/2cb8e2ca-9487-4e02-8059-3e171b4d5f13.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 582088,
+      "type": "product",
+      "slug": "produit-figma-27",
+      "publicPath": "/images/products/produit-figma-27"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/a69b4e2a-e813-431c-a2f3-7ffde74d5961.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 693795,
+      "type": "product",
+      "slug": "produit-figma-28",
+      "publicPath": "/images/products/produit-figma-28"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/5ce5cde8-284f-48c0-adf2-ebedc640e933.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 626961,
+      "type": "product",
+      "slug": "produit-figma-29",
+      "publicPath": "/images/products/produit-figma-29"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/50c96632-fb80-47e8-ac70-8034ac375b10.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 718118,
+      "type": "product",
+      "slug": "produit-figma-30",
+      "publicPath": "/images/products/produit-figma-30"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ba551821-3eb5-452e-a91d-38c011bf3cf5.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 483748,
+      "type": "product",
+      "slug": "produit-figma-31",
+      "publicPath": "/images/products/produit-figma-31"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/8b7de437-7a22-4a30-817a-78ea91c617b4.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 267057,
+      "type": "product",
+      "slug": "produit-figma-32",
+      "publicPath": "/images/products/produit-figma-32"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/e029e35d-248f-48a8-9857-ad4b5ef5a840.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 574062,
+      "type": "product",
+      "slug": "produit-figma-33",
+      "publicPath": "/images/products/produit-figma-33"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/c788be93-5993-47c1-a90f-4b1b059b9356.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 486256,
+      "type": "product",
+      "slug": "produit-figma-34",
+      "publicPath": "/images/products/produit-figma-34"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/7e1f8fc3-cc3b-46bd-b621-d08696f0e1c6.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 492464,
+      "type": "product",
+      "slug": "produit-figma-35",
+      "publicPath": "/images/products/produit-figma-35"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/fbecd2f4-4e18-48ab-a9bd-e43efb44b43d.png",
+      "width": 512,
+      "height": 373,
+      "bytes": 466979,
+      "type": "blog",
+      "slug": "article-figma-01",
+      "publicPath": "/images/blog/article-figma-01"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/0f89c999-4724-46bc-bc62-d52b7607bfbd.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 450882,
+      "type": "blog",
+      "slug": "article-figma-02",
+      "publicPath": "/images/blog/article-figma-02"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/c3700cf7-1eee-4347-a5d8-1be34697000a.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 467870,
+      "type": "blog",
+      "slug": "article-figma-03",
+      "publicPath": "/images/blog/article-figma-03"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/0161fb2a-156e-4068-838c-a7d9c65cd101.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 361430,
+      "type": "blog",
+      "slug": "article-figma-04",
+      "publicPath": "/images/blog/article-figma-04"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/6424c22f-3a7b-4d99-97c4-e3815cdd1e52.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 507887,
+      "type": "blog",
+      "slug": "article-figma-05",
+      "publicPath": "/images/blog/article-figma-05"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/cd345b90-3b7b-4d7a-bb77-ab6d5156585e.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 362772,
+      "type": "blog",
+      "slug": "article-figma-06",
+      "publicPath": "/images/blog/article-figma-06"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/4499fbc3-687b-4c43-8333-a903d40b5565.png",
+      "width": 512,
+      "height": 341,
+      "bytes": 296096,
+      "type": "blog",
+      "slug": "article-figma-07",
+      "publicPath": "/images/blog/article-figma-07"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/f932a1db-20c4-464c-b09b-721553bdc149.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 397251,
+      "type": "blog",
+      "slug": "article-figma-08",
+      "publicPath": "/images/blog/article-figma-08"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/430ea49e-59c5-4e5e-8c2b-0b26547eff6d.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 433005,
+      "type": "blog",
+      "slug": "article-figma-09",
+      "publicPath": "/images/blog/article-figma-09"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/680629d1-d8fc-4ebb-80e1-8825da5d5392.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 425322,
+      "type": "blog",
+      "slug": "article-figma-10",
+      "publicPath": "/images/blog/article-figma-10"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/702d422a-51b7-4fed-be1a-be0ab778c28d.png",
+      "width": 292,
+      "height": 512,
+      "bytes": 270488,
+      "type": "misc",
+      "slug": "figma-06",
+      "publicPath": "/images/figma/figma-06"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ea9e1b80-5ae0-410e-a0d0-0fdc0a5aff78.png",
+      "width": 292,
+      "height": 512,
+      "bytes": 404936,
+      "type": "misc",
+      "slug": "figma-07",
+      "publicPath": "/images/figma/figma-07"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b8fb8b47-2acc-468f-8434-3aeee94a8f01.png",
+      "width": 292,
+      "height": 512,
+      "bytes": 144568,
+      "type": "misc",
+      "slug": "figma-08",
+      "publicPath": "/images/figma/figma-08"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/9a65bdc7-b1b7-4592-b95b-e61242afcef7.png",
+      "width": 292,
+      "height": 512,
+      "bytes": 378359,
+      "type": "misc",
+      "slug": "figma-09",
+      "publicPath": "/images/figma/figma-09"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/46c5c285-8a8c-4eb7-8664-5effcc45a096.png",
+      "width": 292,
+      "height": 512,
+      "bytes": 302895,
+      "type": "misc",
+      "slug": "figma-10",
+      "publicPath": "/images/figma/figma-10"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/5291b7cd-635c-47d8-b55f-0e5b4ecb4daa.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 416116,
+      "type": "blog",
+      "slug": "article-figma-11",
+      "publicPath": "/images/blog/article-figma-11"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/987ef6c7-884f-4859-acb1-4ab592c67dd1.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 336787,
+      "type": "blog",
+      "slug": "article-figma-12",
+      "publicPath": "/images/blog/article-figma-12"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/9c7e9730-7863-44dc-98ea-b73359d45e13.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 300503,
+      "type": "blog",
+      "slug": "article-figma-13",
+      "publicPath": "/images/blog/article-figma-13"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/2544b58d-f7ba-4a92-b81c-818080b7ab49.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 298819,
+      "type": "blog",
+      "slug": "article-figma-14",
+      "publicPath": "/images/blog/article-figma-14"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/b3c866a9-0e28-46aa-97da-8c8e09236e80.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 275119,
+      "type": "blog",
+      "slug": "article-figma-15",
+      "publicPath": "/images/blog/article-figma-15"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/d81b8c30-0ec9-491c-873f-7c34f337236f.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 399608,
+      "type": "blog",
+      "slug": "article-figma-16",
+      "publicPath": "/images/blog/article-figma-16"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/aa1b3c57-5842-434a-9f08-b8b7e3a2920a.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 260120,
+      "type": "blog",
+      "slug": "article-figma-17",
+      "publicPath": "/images/blog/article-figma-17"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/8e64306e-64e9-4487-a352-924ac351e126.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 176169,
+      "type": "blog",
+      "slug": "article-figma-18",
+      "publicPath": "/images/blog/article-figma-18"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/1b424622-3357-445b-8d1b-b332b4a9c89f.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 196805,
+      "type": "blog",
+      "slug": "article-figma-19",
+      "publicPath": "/images/blog/article-figma-19"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/a063362b-cfc3-438e-9804-6d15290e1212.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 101381,
+      "type": "blog",
+      "slug": "article-figma-20",
+      "publicPath": "/images/blog/article-figma-20"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/78dc11b5-152a-418e-9112-e01c7e40d968.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 181747,
+      "type": "blog",
+      "slug": "article-figma-21",
+      "publicPath": "/images/blog/article-figma-21"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/84431f16-67b1-444f-b5fa-9181b78a0dc2.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 143429,
+      "type": "blog",
+      "slug": "article-figma-22",
+      "publicPath": "/images/blog/article-figma-22"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/54c8ce28-f3aa-42e2-9641-2d37ae2ff28f.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 139316,
+      "type": "blog",
+      "slug": "article-figma-23",
+      "publicPath": "/images/blog/article-figma-23"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/688d93a4-81b6-44bf-8234-9ea721988b47.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 192482,
+      "type": "blog",
+      "slug": "article-figma-24",
+      "publicPath": "/images/blog/article-figma-24"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/23b4f512-5084-413a-9ac6-dceec225308a.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 149505,
+      "type": "blog",
+      "slug": "article-figma-25",
+      "publicPath": "/images/blog/article-figma-25"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/fd22bce9-3ef4-4745-b4da-1cf09a269f39.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 119609,
+      "type": "blog",
+      "slug": "article-figma-26",
+      "publicPath": "/images/blog/article-figma-26"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ac8f682c-433a-4f5b-b368-377fb7d7c068.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 161150,
+      "type": "blog",
+      "slug": "article-figma-27",
+      "publicPath": "/images/blog/article-figma-27"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/9783b3b9-de1e-463b-b82d-7a76f02c2f2c.png",
+      "width": 512,
+      "height": 292,
+      "bytes": 89355,
+      "type": "blog",
+      "slug": "article-figma-28",
+      "publicPath": "/images/blog/article-figma-28"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/518f6814-9793-4813-bc56-1268c5c0163c.png",
+      "width": 512,
+      "height": 224,
+      "bytes": 286341,
+      "type": "blog",
+      "slug": "article-figma-29",
+      "publicPath": "/images/blog/article-figma-29"
+    },
+    {
+      "file": "/Users/cgb/Documents/atypique/scripts/.figma-tmp/ebf80c1f-290d-4c19-aee0-413bf4493972.png",
+      "width": 512,
+      "height": 224,
+      "bytes": 312401,
+      "type": "blog",
+      "slug": "article-figma-30",
+      "publicPath": "/images/blog/article-figma-30"
+    }
+  ]
+}

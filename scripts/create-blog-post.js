@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Script pour créer un nouvel article de blog FR et EN
+ * Crée un brouillon d'article pour Boutique Atypique.
  * Usage: node scripts/create-blog-post.js <slug>
- * Exemple: node scripts/create-blog-post.js nouvelle-realisation-inox
+ * Exemple: node scripts/create-blog-post.js guide-cadeaux-noel-bureau
  */
 
 import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'fs';
@@ -12,8 +12,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(__dirname, '..');
 
-// Lire le config SEO si disponible (scripts/seo-config.json)
-let primaryKeyword = 'mot-clé principal (placeholder)';
+let primaryKeyword = 'cadeaux originaux Québec';
 try {
   const configPath = join(projectRoot, 'scripts', 'seo-config.json');
   if (existsSync(configPath)) {
@@ -21,71 +20,47 @@ try {
     primaryKeyword = config.primaryKeyword || primaryKeyword;
   }
 } catch {
-  // Utiliser les valeurs par défaut
+  // default keyword
 }
 
 const slug = process.argv[2];
 if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
   console.log('Usage: node scripts/create-blog-post.js <slug>');
-  console.log('Exemple: node scripts/create-blog-post.js nouvelle-realisation-inox');
+  console.log('Exemple: node scripts/create-blog-post.js guide-cadeaux-noel-bureau');
   console.log('Le slug doit contenir uniquement des lettres minuscules, chiffres et tirets.');
   process.exit(1);
 }
 
 const today = new Date().toISOString().split('T')[0];
-const keywordSlug = primaryKeyword.toLowerCase().replace(/\s+/g, '-').replace(/[éèêë]/g, 'e').replace(/[àâä]/g, 'a');
+const draftsDir = join(projectRoot, 'drafts');
+const imagesDir = join(projectRoot, 'public', 'images', 'blog');
+const outPath = join(draftsDir, `${slug}.md`);
 
-const frFrontmatter = `---
-title: ""
-datePublication: "${today}"
-description: ""
-metaTitre: ""
-metaDescription: ""
-image: "/images/blog/${slug}-${keywordSlug}.avif"
-published: false
-author: "Nom du site"
----
+mkdirSync(draftsDir, { recursive: true });
+mkdirSync(imagesDir, { recursive: true });
 
-Contenu de l'article en français...
-`;
-
-const enFrontmatter = `---
-title: ""
-datePublication: "${today}"
-description: ""
-metaTitre: ""
-metaDescription: ""
-image: "/images/blog/${slug}-${keywordSlug}.avif"
-published: false
-author: "Nom du site"
----
-
-Article content in English...
-`;
-
-const blogFrDir = join(projectRoot, 'src', 'content', 'blogFr');
-const blogEnDir = join(projectRoot, 'src', 'content', 'blogEn');
-const blogDir = join(projectRoot, 'public', 'images', 'blog');
-
-mkdirSync(blogFrDir, { recursive: true });
-mkdirSync(blogEnDir, { recursive: true });
-mkdirSync(blogDir, { recursive: true });
-
-const fileFr = join(blogFrDir, `${slug}.md`);
-const fileEn = join(blogEnDir, `${slug}.md`);
-
-if (existsSync(fileFr) || existsSync(fileEn)) {
-  console.error(`Erreur: un article avec le slug "${slug}" existe déjà.`);
+if (existsSync(outPath)) {
+  console.error(`Erreur: un brouillon avec le slug "${slug}" existe déjà.`);
   process.exit(1);
 }
 
-writeFileSync(fileFr, frFrontmatter, 'utf-8');
-writeFileSync(fileEn, enFrontmatter, 'utf-8');
+const draft = `---
+title: ""
+date: "${today}"
+category: ""
+excerpt: ""
+image: "/images/blog/${slug}"
+published: false
+author: "Boutique Atypique"
+---
 
-console.log(`Articles créés:`);
-console.log(`  - src/content/blogFr/${slug}.md`);
-console.log(`  - src/content/blogEn/${slug}.md`);
-console.log(`\nProchaines étapes:`);
-console.log(`  1. Remplir le contenu FR et EN`);
-console.log(`  2. Ajouter l'image dans public/images/blog/ (puis lancer: node scripts/optimize-image.js <image> public/images/blog)`);
-console.log(`  3. Mettre published: true quand prêt`);
+Contenu de l'article...
+`;
+
+writeFileSync(outPath, draft, 'utf-8');
+
+console.log(`Brouillon créé: drafts/${slug}.md`);
+console.log('\nProchaines étapes:');
+console.log('  1. Rédiger le contenu et compléter le frontmatter');
+console.log(`  2. Ajouter l'image: node scripts/optimize-image.js <image> public/images/blog ${slug}`);
+console.log('  3. Copier l\'entrée dans src/data/articles.ts pour publication');

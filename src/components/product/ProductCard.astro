@@ -1,5 +1,6 @@
 ---
 import type { Product } from '@/lib/products';
+import OptimizedPicture from '@components/OptimizedPicture.astro';
 
 interface Props {
   product: Product;
@@ -9,14 +10,14 @@ const { product } = Astro.props;
 const price = product.priceLabel ?? `${product.priceCad} $`;
 ---
 <article class="flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-card">
-  <div class="aspect-[16/10] bg-cream-soft">
-    <div
-      class="flex size-full items-center justify-center bg-gradient-to-br from-cream-soft to-forest/10 text-sm text-ink-muted"
-      role="img"
-      aria-label={product.imageAlt}
-    >
-      Image produit
-    </div>
+  <div class="aspect-[16/10] overflow-hidden bg-cream-soft">
+    <OptimizedPicture
+      src={product.image}
+      alt={product.imageAlt}
+      width={405}
+      height={220}
+      class="size-full object-cover"
+    />
   </div>
   <div class="flex flex-1 flex-col gap-3 p-5">
     <div class="flex flex-wrap gap-2">

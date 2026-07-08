@@ -29,3 +29,6 @@ pnpm-debug.log*
 *~
 .vercel/output/
 .vercel/output
+
+# Figma download temp
+scripts/.figma-tmp/

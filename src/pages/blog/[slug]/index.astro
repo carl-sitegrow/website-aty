@@ -4,6 +4,7 @@ import SiteHeader from '@components/site/SiteHeader.astro';
 import SiteFooter from '@components/site/SiteFooter.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
 import BlogCard from '@components/blog/BlogCard.astro';
+import OptimizedPicture from '@components/OptimizedPicture.astro';
 import JsonLd from '@components/JsonLd.astro';
 import { siteConfig } from '@/config/site';
 import { breadcrumbTrails } from '@/lib/breadcrumb';
@@ -56,10 +57,16 @@ const schema = buildArticleGraph(article, origin, { path: `/blog/${article.slug}
       </div>
     </header>
 
-    <div class="container-content mb-12 aspect-[21/9] overflow-hidden rounded-xl bg-cream-soft mx-5 sm:mx-10 lg:mx-20">
-      <div class="flex size-full items-center justify-center text-ink-muted" role="img" aria-label={article.imageAlt}>
-        Image hero article
-      </div>
+    <div class="container-content mx-5 mb-12 aspect-[21/9] overflow-hidden rounded-xl bg-cream-soft sm:mx-10 lg:mx-20">
+      <OptimizedPicture
+        src={article.image}
+        alt={article.imageAlt}
+        width={1200}
+        height={514}
+        class="size-full object-cover"
+        fetchpriority="high"
+        loading="eager"
+      />
     </div>
 
     <article class="container-content grid gap-12 px-5 pb-20 sm:px-10 lg:grid-cols-[1fr_320px] lg:px-20">

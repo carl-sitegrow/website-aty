@@ -1,24 +1,32 @@
-# Blog / nouvelles
+# Blogue — Boutique Atypique
 
-## Contenu actuel
+## Source de vérité
 
-Les articles affichés sur **`/blogue/`** et **`/en/blog/`** sont définis dans **`src/data/blog.ts`** (titres, extraits, blocs de contenu, paires FR ↔ EN par `slug` / `enSlug`).
+Les articles affichés sur **`/blog/`** sont définis dans **`src/data/articles.ts`** (slug, titre, extrait, image, corps, métadonnées).
 
-## Ajouter un article (données structurées)
+## Ajouter un article
 
-1. Ouvrir **`src/data/blog.ts`**
-2. Ajouter une entrée à **`blogPostsFr`** et **`blogPostsEn`** (ou suivre le motif des articles existants)
-3. Ajouter les images sous **`public/images/`** si besoin, puis déployer
+1. Ajouter une entrée dans **`src/data/articles.ts`**
+2. Placer l’image sous **`public/images/blog/`** avec un slug SEO, puis optimiser :
 
-## Fichiers Markdown (optionnel)
+```bash
+node scripts/optimize-image.js ./ma-photo.jpg public/images/blog mon-slug-article
+```
 
-Le script **`npm run new-post -- <slug>`** crée des squelettes dans :
+3. Référencer le chemin sans extension dans `articles.ts` : `image: '/images/blog/mon-slug-article'`
 
-- `src/content/blogFr/<slug>.md`
-- `src/content/blogEn/<slug>.md`
+## Script Markdown (optionnel)
 
-Si vous basculiez le blog entièrement sur le Markdown, il faudrait brancher les pages Astro sur ces fichiers ; aujourd’hui la source de vérité pour les articles en ligne est **`blog.ts`**.
+```bash
+node scripts/add-blog-post-from-md.js ./drafts/mon-article.md
+```
 
-## API de publication (`/api/publish-blog`)
+Le script met à jour `articles.ts` et peut optimiser une image locale fournie dans le dossier du brouillon.
 
-Une route API permet de pousser du contenu via GitHub (voir le fichier **`src/pages/api/publish-blog.ts`** et les variables **`GITHUB_*`** dans `.env.example`). Réservé aux usages automatisés avec secret et dépôt configurés.
+## Nouveau squelette
+
+```bash
+node scripts/create-blog-post.js mon-slug-article
+```
+
+Crée des fichiers Markdown de brouillon ; branchez ensuite le contenu dans `articles.ts` pour publication.

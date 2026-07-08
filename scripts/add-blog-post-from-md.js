@@ -1,24 +1,21 @@
 #!/usr/bin/env node
 /**
- * Ajoute un article de blog à partir d'un fichier Markdown :
- * - Télécharge une image Unsplash, l'optimise et la renomme pour le SEO
- * - Enregistre l'article dans src/content/blog/
- * - Commit + push (déclenche le build Vercel)
+ * Ajoute un article de blog à partir d'un fichier Markdown (brouillon local).
+ * - Optimise une image locale si présente dans le dossier du brouillon
+ * - Enregistre l'article dans src/content/blog/ (brouillon Markdown)
  *
  * Usage: node scripts/add-blog-post-from-md.js <fichier.md> [options]
- *        npm run add-post -- ./drafts/mon-article.md
  *
  * Options:
  *   --slug <slug>         Forcer le slug (sinon déduit du nom du fichier)
- *   --no-image            Ne pas télécharger d'image Unsplash
- *   --unsplash-query <q>  Mot-clé de recherche Unsplash
+ *   --no-image            Ne pas traiter d'image
  *   --draft               published: false
  *   --no-push             Ne pas faire git push (commit uniquement)
  *   --build               Lancer npm run build après le commit
  *   --overwrite           Écraser si l'article existe déjà
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname, basename, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -48,8 +45,7 @@ const getOpt = (name) => {
 const hasFlag = (name) => args.includes(`--${name}`);
 
 const slugArg = getOpt('slug');
-const noImage = hasFlag('no-image');
-const unsplashQuery = getOpt('unsplash-query');
+const noImage = hasFlag('no-image') || !hasFlag('fetch-image');
 const draft = hasFlag('draft');
 const noPush = hasFlag('no-push');
 const doBuild = hasFlag('build');
@@ -137,35 +133,15 @@ function getSeoName() {
   return kebab ? `${slug}-${kebab}` : slug;
 }
 
-// ─── Télécharger image Unsplash ───────────────────────────────────────────
-async function fetchUnsplashImage(query) {
-  const key = process.env.UNSPLASH_ACCESS_KEY;
-  if (!key) {
-    console.error('Variable UNSPLASH_ACCESS_KEY manquante dans .env (voir .env.example).');
-    process.exit(1);
+// ─── Image locale (jpg/png/webp à côté du .md) ────────────────────────────
+function findLocalImage(mdFile) {
+  const dir = dirname(mdFile);
+  const base = basename(mdFile, '.md');
+  for (const ext of ['.jpg', '.jpeg', '.png', '.webp']) {
+    const candidate = join(dir, base + ext);
+    if (existsSync(candidate)) return candidate;
   }
-  const q = encodeURIComponent(query || slug.replace(/-/g, ' '));
-  const url = `https://api.unsplash.com/photos/random?query=${q}&client_id=${key}`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    console.error(`Unsplash API error: ${res.status}`);
-    process.exit(1);
-  }
-  const data = await res.json();
-  const imgUrl = data.urls?.regular || data.urls?.full || data.urls?.raw;
-  if (!imgUrl) {
-    console.error('Réponse Unsplash sans URL image.');
-    process.exit(1);
-  }
-  const imgRes = await fetch(imgUrl);
-  if (!imgRes.ok) {
-    console.error('Échec téléchargement image.');
-    process.exit(1);
-  }
-  const buf = Buffer.from(await imgRes.arrayBuffer());
-  const jpgPath = join(imagesDir, `${slug}.jpg`);
-  writeFileSync(jpgPath, buf);
-  return jpgPath;
+  return null;
 }
 
 // ─── Main ────────────────────────────────────────────────────────────────
@@ -184,20 +160,20 @@ async function main() {
   const nomSeo = getSeoName();
 
   if (!noImage) {
-    console.log('Téléchargement image Unsplash...');
-    const query = unsplashQuery || slug.replace(/-/g, ' ');
-    const jpgPath = await fetchUnsplashImage(query);
-    console.log('Optimisation image (AVIF/WebP)...');
-    execSync(
-      `node scripts/optimize-image.js "${jpgPath}" public/images/blog "${nomSeo}"`,
-      { cwd: projectRoot, stdio: 'inherit' }
-    );
-    imagePath = `/images/blog/${nomSeo}.avif`;
-    merged.image = imagePath;
-    // Supprimer le .jpg temporaire pour ne pas le committer
-    try {
-      unlinkSync(jpgPath);
-    } catch (_) {}
+    const localImage = findLocalImage(absoluteMdPath);
+    if (localImage) {
+      console.log(`Optimisation image locale: ${basename(localImage)}`);
+      execSync(
+        `node scripts/optimize-image.js "${localImage}" public/images/blog "${nomSeo}"`,
+        { cwd: projectRoot, stdio: 'inherit' },
+      );
+      imagePath = `/images/blog/${nomSeo}`;
+      merged.image = imagePath;
+    } else if (frontmatter.image) {
+      merged.image = frontmatter.image;
+    } else {
+      console.log('Aucune image locale trouvée (placez <slug>.jpg à côté du .md ou utilisez --no-image).');
+    }
   } else if (frontmatter.image) {
     merged.image = frontmatter.image;
   }
