@@ -1,5 +1,6 @@
 ---
 import type { BreadcrumbItem } from '@/lib/breadcrumb';
+import JsonLd from '@components/JsonLd.astro';
 
 interface Props {
   items: BreadcrumbItem[];
@@ -9,7 +10,20 @@ interface Props {
 const { items, light = false } = Astro.props;
 const text = light ? 'text-white/60' : 'text-ink-muted';
 const active = light ? 'text-white' : 'text-forest';
+
+const origin = Astro.site ?? new URL(Astro.url.origin);
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    ...(item.href ? { item: new URL(item.href, origin).href } : {}),
+  })),
+};
 ---
+<JsonLd schema={breadcrumbSchema} />
 <nav aria-label="Fil d'Ariane" class="container-content section-pad !py-6">
   <ol class={`flex flex-wrap items-center gap-2 text-sm ${text}`}>
     {items.map((item, i) => (

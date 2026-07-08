@@ -9,6 +9,7 @@ import { siteConfig } from '@/config/site';
 import { breadcrumbTrails } from '@/lib/breadcrumb';
 import { getPublishedArticles, getArticleBySlug } from '@/data/articles';
 import { getTopProducts } from '@/lib/products';
+import { buildArticleGraph } from '@/lib/schema';
 
 export function getStaticPaths() {
   return getPublishedArticles().map((article) => ({
@@ -27,15 +28,8 @@ const related = getPublishedArticles()
   .slice(0, 3);
 const picks = getTopProducts(5);
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: article.title,
-  datePublished: article.dateISO,
-  author: { '@type': 'Person', name: article.author },
-  description: article.excerpt,
-  inLanguage: 'fr-CA',
-};
+const origin = Astro.site ?? new URL(Astro.url.origin);
+const schema = buildArticleGraph(article, origin, { path: `/blog/${article.slug}/` });
 ---
 <HomeLayout
   title={`${article.title} | ${siteConfig.siteName}`}

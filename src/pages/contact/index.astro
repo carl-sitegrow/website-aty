@@ -3,17 +3,24 @@ import HomeLayout from '@layouts/HomeLayout.astro';
 import SiteHeader from '@components/site/SiteHeader.astro';
 import SiteFooter from '@components/site/SiteFooter.astro';
 import Breadcrumb from '@components/Breadcrumb.astro';
+import JsonLd from '@components/JsonLd.astro';
 import { siteConfig } from '@/config/site';
 import { contactContent } from '@/data/content';
 import { breadcrumbTrails } from '@/lib/breadcrumb';
+import { buildFaqSchema } from '@/lib/schema';
 
 const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID;
 const formAction = formspreeId ? `https://formspree.io/f/${formspreeId}` : undefined;
+
+const faqSchema = buildFaqSchema(
+  contactContent.faq.map((item) => ({ question: item.q, answer: item.a }))
+);
 ---
 <HomeLayout
   title={`Contact | ${siteConfig.siteName}`}
   description="Contactez Boutique Atypique — questions, soumissions de produits et partenariats."
 >
+  <JsonLd schema={faqSchema} />
   <SiteHeader />
   <Breadcrumb items={breadcrumbTrails.contact()} />
   <main>

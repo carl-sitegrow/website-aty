@@ -35,6 +35,16 @@
       "source": "/sitemap/",
       "destination": "/sitemap.xml",
       "statusCode": 301
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/plan-du-site/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.html/",
+      "destination": "/plan-du-site/",
+      "statusCode": 301
     }
   ]
 }

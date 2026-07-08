@@ -1,0 +1,59 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import { breadcrumbTrails, frPagesList } from '@/lib/breadcrumb';
+import { siteConfig } from '@/config/site';
+
+const mainLinks = frPagesList.filter((l) => l.section === 'main');
+const legalLinks = frPagesList.filter((l) => l.section === 'legal');
+---
+<HomeLayout
+  title={`Plan du site | ${siteConfig.siteName}`}
+  description="Plan du site — retrouvez toutes les pages en un coup d'œil."
+>
+  <SiteHeader />
+  <Breadcrumb items={breadcrumbTrails.plan()} />
+  <main class="section-pad">
+    <div class="container-content max-w-3xl">
+      <h1 class="font-display text-4xl font-semibold text-forest sm:text-5xl">Plan du site</h1>
+      <p class="mt-6 text-lg leading-relaxed text-ink-muted">
+        Toutes les pages de {siteConfig.siteName} regroupées sur une seule page.
+      </p>
+
+      <nav aria-label="Plan du site" class="mt-12">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-amber">Pages principales</h2>
+        <ul class="mt-6 flex flex-col gap-3">
+          {mainLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="inline-flex items-center gap-2 text-lg font-medium text-forest transition-colors hover:text-amber"
+              >
+                <span aria-hidden="true">→</span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="mt-12 text-sm font-semibold uppercase tracking-wider text-amber">Mentions légales</h2>
+        <ul class="mt-6 flex flex-col gap-3">
+          {legalLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="inline-flex items-center gap-2 text-base text-ink-muted transition-colors hover:text-forest"
+              >
+                <span aria-hidden="true">→</span>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </main>
+  <SiteFooter />
+</HomeLayout>

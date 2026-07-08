@@ -4,7 +4,7 @@ import SiteHeader from '@components/site/SiteHeader.astro';
 import SiteFooter from '@components/site/SiteFooter.astro';
 import { siteConfig } from '@/config/site';
 ---
-<HomeLayout title={`Page introuvable | ${siteConfig.siteName}`} description="Cette page n'existe pas.">
+<HomeLayout title={`Page introuvable | ${siteConfig.siteName}`} description="Cette page n'existe pas." robots="noindex, follow">
   <SiteHeader />
   <main class="section-pad">
     <div class="container-content max-w-xl text-center">
