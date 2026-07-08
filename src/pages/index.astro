@@ -1,0 +1,209 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import TrustBanner from '@components/site/TrustBanner.astro';
+import BlogCard from '@components/blog/BlogCard.astro';
+import JsonLd from '@components/JsonLd.astro';
+import { siteConfig } from '@/config/site';
+import { homeContent } from '@/data/content';
+import { getPublishedArticles } from '@/data/articles';
+import { getFeaturedProducts } from '@/lib/products';
+
+const articles = getPublishedArticles();
+const featured = articles.find((a) => a.featured) ?? articles[0];
+const secondary = articles.filter((a) => a.slug !== featured?.slug).slice(0, 3);
+const grid = articles.slice(0, 6);
+const spotlight = getFeaturedProducts(3);
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteConfig.siteName,
+  url: new URL('/', Astro.site ?? Astro.url.origin).href,
+  description: siteConfig.defaultDescription,
+  inLanguage: 'fr-CA',
+};
+---
+<HomeLayout title={`${siteConfig.siteName} | Idées cadeaux originales au Québec`} description={siteConfig.defaultDescription}>
+  <JsonLd schema={websiteSchema} />
+  <SiteHeader />
+  <main>
+    <!-- HERO -->
+    <section class="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-forest px-5 py-24 text-center text-white sm:px-10 lg:px-20">
+      <picture class="pointer-events-none absolute inset-0">
+        <source srcset={`${homeContent.hero.image}.avif`} type="image/avif" />
+        <source srcset={`${homeContent.hero.image}.webp`} type="image/webp" />
+        <img
+          src={`${homeContent.hero.image}.webp`}
+          alt=""
+          width="1440"
+          height="680"
+          class="size-full object-cover"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <div class="absolute inset-0 bg-[rgba(27,67,50,0.45)]" aria-hidden="true"></div>
+      <div class="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-8">
+        <h1 class="font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-7xl">
+          {homeContent.hero.title}
+        </h1>
+        <p class="max-w-2xl text-lg opacity-90 sm:text-xl leading-relaxed">
+          {homeContent.hero.subtitle}
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href={homeContent.hero.primaryHref} class="btn-primary">{homeContent.hero.primaryCta}</a>
+          <a href={homeContent.hero.secondaryHref} class="btn-secondary">{homeContent.hero.secondaryCta}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- POUR QUI -->
+    <section class="section-pad">
+      <div class="container-content">
+        <h2 class="heading-display text-center text-3xl sm:text-5xl">Pour qui cherchez-vous?</h2>
+        <div class="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+          {homeContent.audiences.map((item) => (
+            <a
+              href={item.href}
+              class="flex flex-col items-center gap-4 rounded-xl border border-line bg-white p-6 shadow-card transition-transform hover:-translate-y-0.5"
+            >
+              <span class="flex size-16 items-center justify-center rounded-full bg-cream-soft text-forest" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.5-7 8-7s8 3 8 7" />
+                </svg>
+              </span>
+              <span class="inline-flex items-center gap-1 font-display text-lg font-semibold text-ink">
+                {item.label}
+                <span aria-hidden="true" class="text-sm">›</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDES FEATURED -->
+    <section class="section-pad bg-white">
+      <div class="container-content">
+        <div class="max-w-3xl">
+          <h2 class="heading-display text-3xl sm:text-5xl">Nos guides cadeaux</h2>
+          <p class="mt-4 text-lg text-ink-muted">{homeContent.blogIntro}</p>
+          <a href="/blog/" class="link-arrow mt-4">Voir tout le blogue <span aria-hidden="true">→</span></a>
+        </div>
+        {featured && (
+          <div class="mt-12">
+            <BlogCard article={featured} featured />
+          </div>
+        )}
+        <div class="mt-8 grid gap-8 md:grid-cols-3">
+          {secondary.map((article) => (
+            <BlogCard article={article} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PAR STYLE -->
+    <section class="section-pad">
+      <div class="container-content">
+        <h2 class="heading-display text-3xl sm:text-5xl">Par style</h2>
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {homeContent.styles.map((style) => (
+            <a
+              href={style.href}
+              class="group relative flex min-h-[280px] flex-col justify-end overflow-hidden rounded-xl bg-forest p-6 text-white"
+            >
+              <div class="absolute inset-0 bg-gradient-to-t from-forest via-forest/70 to-forest-soft/40 transition-opacity group-hover:opacity-90" aria-hidden="true"></div>
+              <div class="relative">
+                <span class="rounded-full bg-amber px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide">{style.tag}</span>
+                <h3 class="mt-3 font-display text-2xl font-semibold">{style.label}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- OCCASIONS -->
+    <section id="occasions" class="bg-forest px-5 py-12 sm:px-10 lg:px-20">
+      <div class="container-content flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">Occasions spéciales</h2>
+        <div class="flex flex-wrap gap-3">
+          {homeContent.occasions.map((o) => (
+            <a
+              href={o.href}
+              class="rounded-full border border-white/70 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-forest"
+            >
+              {o.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BUDGET -->
+    <section id="budget" class="section-pad">
+      <div class="container-content">
+        <div class="text-center">
+          <h2 class="heading-display text-3xl sm:text-5xl">Par budget</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-muted">
+            Trouvez le cadeau parfait sans dépasser votre limite.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          {homeContent.budgets.map((b) => (
+            <a href={b.href} class="rounded-xl border border-line bg-white p-8 shadow-card transition-transform hover:-translate-y-0.5">
+              <span class="inline-flex rounded-full bg-forest px-4 py-2 text-sm font-semibold text-white">{b.label}</span>
+              <p class="mt-6 text-base leading-relaxed text-ink-muted">{b.description}</p>
+              <span class="link-arrow mt-6">Découvrir <span aria-hidden="true">→</span></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT TEASER -->
+    <section class="section-pad bg-white">
+      <div class="container-content">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <h2 class="heading-display text-3xl sm:text-4xl">Coups de cœur</h2>
+          <a href="/cadeaux/" class="link-arrow">Voir toutes les idées <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          {spotlight.map((product) => (
+            <article class="rounded-xl border border-line bg-cream p-6">
+              <h3 class="font-display text-xl font-semibold">{product.title}</h3>
+              <p class="mt-2 text-sm text-ink-muted">{product.description}</p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="font-semibold text-forest">{product.priceLabel ?? `${product.priceCad} $`}</span>
+                <a href={product.externalUrl} class="link-arrow" target="_blank" rel="noopener noreferrer sponsored">Voir →</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG GRID -->
+    <section class="section-pad">
+      <div class="container-content">
+        <h2 class="heading-display text-3xl sm:text-5xl">Nos guides cadeaux</h2>
+        <p class="mt-4 max-w-3xl text-lg text-ink-muted">{homeContent.blogIntro}</p>
+        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {grid.map((article) => (
+            <BlogCard article={article} />
+          ))}
+        </div>
+        <div class="mt-12 flex justify-center">
+          <a href="/blog/" class="btn-forest">Voir tous les articles <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <TrustBanner />
+  </main>
+  <SiteFooter />
+</HomeLayout>

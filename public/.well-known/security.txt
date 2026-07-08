@@ -1,0 +1,4 @@
+# Remplacer l'adresse avant mise en production.
+Contact: mailto:contact@exemple.com
+Preferred-Languages: fr, en
+Canonical: https://exemple.com/.well-known/security.txt

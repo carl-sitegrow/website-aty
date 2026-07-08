@@ -1,0 +1,53 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import BlogCard from '@components/blog/BlogCard.astro';
+import { siteConfig } from '@/config/site';
+import { getPublishedArticles, getArticleCategories } from '@/data/articles';
+
+const articles = getPublishedArticles();
+const featured = articles.find((a) => a.featured) ?? articles[0];
+const rest = articles.filter((a) => a.slug !== featured?.slug);
+const categories = getArticleCategories();
+---
+<HomeLayout
+  title={`Le blogue | ${siteConfig.siteName}`}
+  description="Guides cadeaux, astuces et inspirations pour offrir mieux au Québec."
+>
+  <SiteHeader activeHref="/blog/" />
+  <main>
+    <section class="bg-forest px-5 py-16 text-white sm:px-10 lg:px-16">
+      <div class="container-content">
+        <p class="text-sm text-white/60">
+          <a href="/" class="hover:text-white">Accueil</a> › Blogue
+        </p>
+        <h1 class="mt-4 font-display text-4xl font-semibold sm:text-6xl">Le blogue</h1>
+        <p class="mt-4 max-w-2xl text-lg text-white/80">
+          Guides cadeaux, astuces et inspirations pour offrir mieux au Québec.
+        </p>
+      </div>
+    </section>
+
+    <div class="border-b border-line bg-cream-soft px-5 py-5 sm:px-10 lg:px-16">
+      <div class="container-content flex flex-wrap gap-3">
+        <span class="rounded-full bg-amber px-4 py-2 text-sm font-bold text-white">Tous les articles</span>
+        {categories.map((cat) => (
+          <span class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-forest">{cat}</span>
+        ))}
+      </div>
+    </div>
+
+    <section class="section-pad">
+      <div class="container-content space-y-12">
+        {featured && <BlogCard article={featured} featured />}
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {rest.map((article) => (
+            <BlogCard article={article} />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</HomeLayout>

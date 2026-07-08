@@ -1,0 +1,51 @@
+---
+description: Guide interactif pour dupliquer ou reconfigurer le site (nouveau client / marque). S'active quand l'utilisateur dit "duplique", "nouveau site", "clone", "autre ville".
+alwaysApply: true
+---
+
+# Dupliquer ou reconfigurer le site
+
+Quand l'utilisateur demande de dupliquer ou reconfigurer le projet pour un autre client ou une autre marque, suivre ce processus interactif.
+
+## Étape 1 — Infos essentielles
+
+Utiliser `AskQuestion` pour demander :
+
+1. **Nom affiché** (ex. Acme Manufacturing)
+2. **Ville / région** (pour `siteConfig.city`, `siteConfig.region`)
+3. **Domaine** (ex. `exemple.com`)
+4. **Courriel de contact** (ex. `info@exemple.com`)
+5. **Réseaux sociaux** (URLs ou vides)
+
+## Étape 2 — Contenu métier
+
+Demander selon le besoin :
+
+- **SEO** : mot-clé principal, description par défaut
+- **Pages clés** : titres/descriptions dans `siteConfig.pagesMeta`
+- **Secteurs / services** : `src/data/sectors.ts`, `src/data/services.ts` si applicable
+- **Zones desservies** : `siteConfig.nearbyAreas`
+
+## Étape 3 — Témoignages et visuels
+
+- `src/data/testimonials.ts` — citations FR/EN, images sous `/public/images/`
+- Vérifier les chemins d’images dans `site.ts` et les composants (pas de chemins d’un ancien déploiement)
+
+## Étape 4 — Appliquer
+
+- `src/config/site.ts` — configuration maîtresse
+- `.env` et `.env.example` — `SITE_URL`, `SITE_DOMAIN`, `CONTACT_EMAIL`, `FROM_EMAIL` (expéditeur Resend)
+- `scripts/seo-config.json` — mots-clés pour les scripts utilitaires
+
+## Fichiers clés (état actuel du dépôt)
+
+| Fichier | Rôle |
+|--------|------|
+| `src/config/site.ts` | Textes, meta, barre header, footer, home (`homePage` / `homePageEn`) |
+| `src/data/testimonials.ts` | Témoignages carrousel accueil |
+| `src/data/sectors.ts` / `src/data/services.ts` | Industries et services |
+| `.env` | Variables d’environnement |
+
+## Règle importante
+
+Même après duplication, **ne pas hardcoder** ville ou région dans les `.astro` : utiliser `siteConfig.city`, `siteConfig.region`, `siteConfig.siteName`, etc.

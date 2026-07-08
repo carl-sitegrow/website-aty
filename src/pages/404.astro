@@ -1,0 +1,21 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import { siteConfig } from '@/config/site';
+---
+<HomeLayout title={`Page introuvable | ${siteConfig.siteName}`} description="Cette page n'existe pas.">
+  <SiteHeader />
+  <main class="section-pad">
+    <div class="container-content max-w-xl text-center">
+      <p class="text-sm font-semibold uppercase tracking-wider text-amber">Erreur 404</p>
+      <h1 class="mt-4 font-display text-4xl font-semibold text-forest">Page introuvable</h1>
+      <p class="mt-4 text-ink-muted">La page demandée n'existe pas ou a été déplacée.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="/" class="btn-primary">Retour à l'accueil</a>
+        <a href="/cadeaux/" class="btn-forest">Voir les idées cadeaux</a>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</HomeLayout>

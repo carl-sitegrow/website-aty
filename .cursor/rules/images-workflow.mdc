@@ -1,0 +1,42 @@
+---
+description: Téléchargement, nom SEO, optimisation AVIF/WebP pour toute image ajoutée ou remplacée
+alwaysApply: true
+---
+
+# Images — ajout, remplacement, URL externe
+
+Quand l’utilisateur demande d’**ajouter**, **changer** ou **remplacer** une image (fichier fourni, chemin dans le workspace, ou **lien externe**), exécuter ce flux **sans qu’il ait à le redire**.
+
+## 1. Obtenir le fichier source
+
+- **Fichier local / pièce jointe** : utiliser le chemin fourni dans le workspace (ou copier vers `scripts/` ou la racine si besoin d’un chemin stable).
+- **URL** : télécharger avec `curl -fsSL "<url>" -o /tmp/<nom-temp>.<ext>` (ou équivalent), en demandant le réseau si nécessaire. Vérifier que le fichier est une image (magic bytes / extension raisonnable).
+
+## 2. Nom SEO (slug)
+
+- **kebab-case**, ASCII, sans espaces : `machine-cnc-usinee`, `hero-accueil-industriel`, `blog titre-article →` slug dérivé du sujet ou du mot-clé convenu avec la page.
+- Un seul **base name** : les sorties seront `slug.avif` et `slug.webp`.
+
+## 3. Dossier cible
+
+- Choisir sous `public/images/` selon le contexte : `blog/`, `carousel/`, `contact/`, `logo/`, `projets/`, etc. Créer le dossier si absent.
+- Ne pas écraser une image existante sans intention claire ; si remplacement, réutiliser le **même slug** que l’ancienne image **ou** mettre à jour **toutes** les références dans le code / `src/data` / `site.ts`.
+
+## 4. Optimisation (obligatoire)
+
+- Lancer **`node scripts/optimize-image.js "<chemin-source>" "public/images/<sous-dossier>" "<slug-seo>"`**
+  - Produit **`slug.avif`** et **`slug.webp`** (Sharp, qualités du script).
+- Supprimer le fichier source **temporaire** (ex. dans `/tmp` ou racine) si on ne doit pas le garder dans le dépôt. Éviter de laisser des JPG/PNG **inutiles** dans `public/` une fois les variantes générées (sauf si le site référence encore l’original : aligner avec `Image.astro` / chemins existants).
+
+## 5. Brancher le site
+
+- Mettre à jour les chemins vers **`/images/.../<slug>.avif`** (ou la convention déjà utilisée sur la page : ogImage, `src` des `<img>`, données dans `src/data/*.ts`, `site.ts`).
+- Si le marquup utilise **`Image.astro`** avec une base `.jpg`/`.png`, fournir les **trois** ou n’utiliser que `.avif`/`.webp` selon le pattern du fichier concerné — **reste cohérent** avec les composants existants.
+
+## 6. Scripts utiles (cas particuliers)
+
+- Logo : `npm run optimize-logo` ou `node scripts/optimize-logo.js`
+- Carrousel accueil : `node scripts/generate-home-carousel-images.mjs`
+- Hero blog : `node scripts/optimize-header-blog.js`
+
+En résumé : **télécharger ou prendre le fichier → placer sous `public/images/...` via optimize-image avec slug SEO → référencer `.avif`/`.webp` partout où c’était l’ancienne image.**

@@ -1,0 +1,52 @@
+---
+import type { Article } from '@/data/articles';
+
+interface Props {
+  article: Article;
+  featured?: boolean;
+}
+
+const { article, featured = false } = Astro.props;
+---
+{
+  featured ? (
+    <article class="flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-card md:flex-row">
+      <div class="aspect-[4/3] bg-cream-soft md:aspect-auto md:w-1/2 md:min-h-[320px]">
+        <div class="flex size-full items-center justify-center text-sm text-ink-muted" role="img" aria-label={article.imageAlt}>
+          Image article
+        </div>
+      </div>
+      <div class="flex flex-1 flex-col justify-center gap-4 p-8 md:w-1/2">
+        <div class="flex items-center gap-3 text-sm">
+          <span class="rounded-full bg-amber px-3 py-1 text-xs font-bold uppercase text-white">{article.category}</span>
+          <span class="text-ink-muted">{article.date}</span>
+        </div>
+        <h3 class="font-display text-3xl font-semibold text-ink leading-tight">
+          <a href={`/blog/${article.slug}/`} class="hover:text-forest transition-colors">{article.title}</a>
+        </h3>
+        <p class="text-base leading-relaxed text-ink-muted">{article.excerpt}</p>
+        <a href={`/blog/${article.slug}/`} class="btn-forest w-fit">
+          Lire l'article <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  ) : (
+    <article class="flex h-full flex-col overflow-hidden rounded-xl border border-line bg-white shadow-card">
+      <div class="aspect-[16/10] bg-cream-soft">
+        <div class="flex size-full items-center justify-center text-sm text-ink-muted" role="img" aria-label={article.imageAlt}>
+          Image article
+        </div>
+      </div>
+      <div class="flex flex-1 flex-col gap-3 p-6">
+        <span class="text-xs font-semibold uppercase tracking-wide text-amber">{article.category}</span>
+        <h3 class="font-display text-xl font-semibold text-ink leading-snug">
+          <a href={`/blog/${article.slug}/`} class="hover:text-forest transition-colors">{article.title}</a>
+        </h3>
+        <p class="text-sm leading-relaxed text-ink-muted line-clamp-3">{article.excerpt}</p>
+        <a href={`/blog/${article.slug}/`} class="link-arrow mt-auto pt-2">
+          Lire l'article <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  )
+}

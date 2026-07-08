@@ -1,0 +1,30 @@
+---
+import type { BreadcrumbItem } from '@/lib/breadcrumb';
+
+interface Props {
+  items: BreadcrumbItem[];
+  light?: boolean;
+}
+
+const { items, light = false } = Astro.props;
+const text = light ? 'text-white/60' : 'text-ink-muted';
+const active = light ? 'text-white' : 'text-forest';
+---
+<nav aria-label="Fil d'Ariane" class="container-content section-pad !py-6">
+  <ol class={`flex flex-wrap items-center gap-2 text-sm ${text}`}>
+    {items.map((item, i) => (
+      <li class="flex items-center gap-2">
+        {i > 0 && <span aria-hidden="true">›</span>}
+        {item.href ? (
+          <a href={item.href} class={`${active} hover:text-amber transition-colors`}>
+            {item.label}
+          </a>
+        ) : (
+          <span class={light ? 'text-white' : 'text-ink'} aria-current="page">
+            {item.label}
+          </span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

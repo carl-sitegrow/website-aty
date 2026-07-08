@@ -1,0 +1,44 @@
+---
+import type { Product } from '@/lib/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const price = product.priceLabel ?? `${product.priceCad} $`;
+---
+<article class="flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-card">
+  <div class="aspect-[16/10] bg-cream-soft">
+    <div
+      class="flex size-full items-center justify-center bg-gradient-to-br from-cream-soft to-forest/10 text-sm text-ink-muted"
+      role="img"
+      aria-label={product.imageAlt}
+    >
+      Image produit
+    </div>
+  </div>
+  <div class="flex flex-1 flex-col gap-3 p-5">
+    <div class="flex flex-wrap gap-2">
+      {product.tags.slice(0, 2).map((tag) => (
+        <span class="rounded-full bg-cream-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-forest">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <h3 class="font-display text-xl font-semibold text-ink">{product.title}</h3>
+    <p class="text-sm leading-relaxed text-ink-muted line-clamp-2">{product.description}</p>
+    <div class="mt-auto flex items-center justify-between pt-2">
+      <span class="font-semibold text-forest">{price}</span>
+      <a
+        href={product.externalUrl}
+        class="link-arrow"
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+      >
+        Voir
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>

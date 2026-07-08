@@ -1,0 +1,97 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import ProductCard from '@components/product/ProductCard.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import JsonLd from '@components/JsonLd.astro';
+import { siteConfig } from '@/config/site';
+import { breadcrumbTrails } from '@/lib/breadcrumb';
+import { getValidatedProducts, getTopProducts } from '@/lib/products';
+import { homeContent } from '@/data/content';
+
+const products = getValidatedProducts();
+const top = getTopProducts(5);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Idées cadeaux — Boutique Atypique',
+  numberOfItems: products.length,
+  itemListElement: products.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.title,
+    url: p.externalUrl,
+  })),
+};
+---
+<HomeLayout
+  title={`Idées cadeaux | ${siteConfig.siteName}`}
+  description="Sélection d'objets insolites et cadeaux originaux au Québec — liens vers les boutiques partenaires."
+>
+  <JsonLd schema={schema} />
+  <SiteHeader activeHref="/cadeaux/" />
+  <Breadcrumb items={breadcrumbTrails.cadeaux()} />
+  <main>
+    <header class="container-content px-5 pb-10 sm:px-10 lg:px-20">
+      <h1 class="font-display text-4xl font-semibold text-forest sm:text-5xl">Nos idées cadeaux</h1>
+      <p class="mt-4 max-w-2xl text-lg text-ink-muted">
+        Une curation d'objets et d'expériences. Chaque « Voir » ouvre la boutique partenaire (lien affilié).
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {homeContent.audiences.map((a) => (
+          <a href={a.href} class="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-forest hover:border-amber hover:text-amber">
+            {a.label}
+          </a>
+        ))}
+      </div>
+    </header>
+
+    <section class="container-content px-5 pb-16 sm:px-10 lg:px-20">
+      <h2 class="font-display text-2xl font-semibold text-forest">Le Top 5 en un clin d'œil</h2>
+      <div class="mt-6 overflow-x-auto rounded-xl border border-line bg-white">
+        <table class="w-full min-w-[720px] text-left text-sm">
+          <thead class="border-b border-line bg-cream-soft text-ink-muted">
+            <tr>
+              <th class="px-5 py-3 font-semibold">Produit</th>
+              <th class="px-5 py-3 font-semibold">Prix (CAD)</th>
+              <th class="px-5 py-3 font-semibold">Pour qui</th>
+              <th class="px-5 py-3 font-semibold">Note</th>
+              <th class="px-5 py-3 font-semibold">Lien</th>
+            </tr>
+          </thead>
+          <tbody>
+            {top.map((p) => (
+              <tr class="border-b border-line last:border-0">
+                <td class="px-5 py-4 font-medium">{p.title}</td>
+                <td class="px-5 py-4">{p.priceLabel ?? `${p.priceCad} $`}</td>
+                <td class="px-5 py-4 text-ink-muted">{p.audience ?? '—'}</td>
+                <td class="px-5 py-4" aria-label={`${p.rating ?? 0} sur 5`}>
+                  {'★'.repeat(Math.round(p.rating ?? 0))}{'☆'.repeat(5 - Math.round(p.rating ?? 0))}
+                </td>
+                <td class="px-5 py-4">
+                  <a href={p.externalUrl} class="rounded-md bg-amber px-3 py-1.5 text-xs font-bold uppercase text-white" target="_blank" rel="noopener noreferrer sponsored">
+                    Voir
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-pad bg-white">
+      <div class="container-content">
+        <h2 class="font-display text-3xl font-semibold text-forest">Nos coups de cœur</h2>
+        <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => (
+            <ProductCard product={product} />
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</HomeLayout>

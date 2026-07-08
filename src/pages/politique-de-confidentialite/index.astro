@@ -1,0 +1,28 @@
+---
+import HomeLayout from '@layouts/HomeLayout.astro';
+import SiteHeader from '@components/site/SiteHeader.astro';
+import SiteFooter from '@components/site/SiteFooter.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import { siteConfig } from '@/config/site';
+import { privacyContent } from '@/data/content';
+import { breadcrumbTrails } from '@/lib/breadcrumb';
+---
+<HomeLayout title={`${privacyContent.title} | ${siteConfig.siteName}`} description={privacyContent.title}>
+  <SiteHeader />
+  <Breadcrumb items={breadcrumbTrails.privacy()} />
+  <main class="section-pad !pt-4">
+    <div class="container-content max-w-3xl">
+      <h1 class="font-display text-4xl font-semibold text-forest">{privacyContent.title}</h1>
+      <p class="mt-2 text-sm text-ink-muted">Mise à jour : {privacyContent.updated}</p>
+      <div class="mt-10 space-y-8">
+        {privacyContent.sections.map((s) => (
+          <section>
+            <h2 class="font-display text-2xl font-semibold text-ink">{s.heading}</h2>
+            <p class="mt-3 leading-relaxed text-ink-muted">{s.body}</p>
+          </section>
+        ))}
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</HomeLayout>
