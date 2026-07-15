@@ -50,5 +50,11 @@ export default defineConfig({
         '@layouts': resolve(__dirname, './src/layouts'),
       },
     },
+    server: {
+      // Lets the dev server be previewed through code-server's port-forwarding
+      // (which proxies with a codecarl.sitegrow.ca Host header) without Vite's
+      // Host-header check rejecting the request.
+      allowedHosts: ['.sitegrow.ca'],
+    },
   },
 });
